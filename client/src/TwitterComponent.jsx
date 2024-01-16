@@ -92,7 +92,7 @@ const TwitterSignInButton = () => {
         onClick={handleTwitterSignIn}
         style={{ padding: "10px 20px", fontSize: "16px" }}
       >
-        Sign in with Twitter
+        Sign in with X (Twitter)
       </button>
     </div>
   );

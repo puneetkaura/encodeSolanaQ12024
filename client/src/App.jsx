@@ -16,11 +16,11 @@ function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1 className="header">CrypticChronicles</h1>
+        <h1 className="header">XCryptic</h1>
         <p className="sub-text">
-          Transforming messages into timeless inscriptions on the blockchain.
+          Secure, immutable and time-resistant messages beyond alteration.
           <br />
-          Secure, immutable, and forever etched in the digital realm 🔐
+          Try now ⬇
         </p>
         <br />
         <div>
