@@ -1,11 +1,10 @@
-
-import React from 'react';
+import React from "react";
 // Retrieve accounts muted by authenticated user
 // https://developer.twitter.com/en/docs/twitter-api/users/mutes/quick-start
-import axios from 'axios';
-import CryptoJS from 'crypto-js';
-import OAuth from 'oauth-1.0a';
-import qs from 'querystring';
+import axios from "axios";
+import CryptoJS from "crypto-js";
+import OAuth from "oauth-1.0a";
+import qs from "querystring";
 
 // The code below sets the consumer key and consumer secret from your environment variables
 // To set environment variables on macOS or Linux, run the export commands below from the terminal:
@@ -25,7 +24,8 @@ const oauth = OAuth({
     secret: consumer_secret,
   },
   signature_method: "HMAC-SHA1",
-  hash_function: (baseString, key) => CryptoJS.HmacSHA1(baseString, key).toString(CryptoJS.enc.Base64)
+  hash_function: (baseString, key) =>
+    CryptoJS.HmacSHA1(baseString, key).toString(CryptoJS.enc.Base64),
 });
 
 async function requestToken() {
@@ -70,25 +70,28 @@ async function accessToken({ oauth_token, oauth_token_secret }) {
 
 const TwitterSignInButton = () => {
   const handleTwitterSignIn = async () => {
-      try {
-        // Get request token
-        const oAuthRequestToken = await requestToken();
-        // Get authorization
-        authorizeURL.searchParams.append(
-          "oauth_token",
-          oAuthRequestToken.oauth_token
-        );
-        console.log("Please go here and authorize:", authorizeURL.href);
-        // Get the access token
-        const oAuthAccessToken = await accessToken(oAuthRequestToken);
-      } catch (e) {
-        console.log(e);
-      }
-    };
+    try {
+      // Get request token
+      const oAuthRequestToken = await requestToken();
+      // Get authorization
+      authorizeURL.searchParams.append(
+        "oauth_token",
+        oAuthRequestToken.oauth_token
+      );
+      console.log("Please go here and authorize:", authorizeURL.href);
+      // Get the access token
+      const oAuthAccessToken = await accessToken(oAuthRequestToken);
+    } catch (e) {
+      console.log(e);
+    }
+  };
 
   return (
-    <div style={{ textAlign: 'center', position: 'absolute', top: '50%', left: '45%' }}>
-      <button onClick={handleTwitterSignIn} style={{ padding: '10px 20px', fontSize: '16px' }}>
+    <div>
+      <button
+        onClick={handleTwitterSignIn}
+        style={{ padding: "10px 20px", fontSize: "16px" }}
+      >
         Sign in with Twitter
       </button>
     </div>
