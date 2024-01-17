@@ -10,14 +10,14 @@ import qs from "querystring";
 // To set environment variables on macOS or Linux, run the export commands below from the terminal:
 // export CONSUMER_KEY='YOUR-KEY'
 // export CONSUMER_SECRET='YOUR-SECRET'
-const consumer_key = "wy3RBT9kwTDdJAVvNyxYoXqZ5";
-const consumer_secret = "Ey1ZfUtPg5CQ9PtirRl1S5B2uGHSNOwYvDJFZYvpJafmYV4nEc";
+const consumer_key = "TqwCvDuTBwEl1YZnvVY4inAls";
+const consumer_secret = "FswQxfL61H6ivGJkvT1jqMAi2dCj1PaQM2IFgTDKjqxxaFZHgU";
 
-// this example uses PIN-based OAuth to authorize the user
-const requestTokenURL =
-  "https://api.twitter.com/oauth/request_token?oauth_callback=oob";
-const authorizeURL = new URL("https://api.twitter.com/oauth/authorize");
-const accessTokenURL = "https://api.twitter.com/oauth/access_token";
+const proxyUrl = "https://cors-anywhere.herokuapp.com/" 
+const twitterUrl = "https://api.twitter.com";
+const requestTokenURL = proxyUrl + twitterUrl + "/oauth/request_token?oauth_callback=" + encodeURIComponent("http://localhost:5173/");
+const authorizeURL = new URL(proxyUrl + twitterUrl + "/oauth/authorize");
+const accessTokenURL = proxyUrl + twitterUrl + "/oauth/access_token";
 const oauth = OAuth({
   consumer: {
     key: consumer_key,
@@ -55,7 +55,7 @@ async function accessToken({ oauth_token, oauth_token_secret }) {
       method: "POST",
     })
   );
-  const path = `https://api.twitter.com/oauth/access_token?oauth_verifier="verifier"&oauth_token=${oauth_token}`;
+  const path = proxyUrl + twitterUrl + `/oauth/access_token?oauth_verifier=1234567&oauth_token=${oauth_token}`;
   const req = await axios.post(path, {
     headers: {
       Authorization: authHeader["Authorization"],
