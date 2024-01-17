@@ -48,6 +48,8 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 button {
@@ -82,4 +84,12 @@ button:focus-visible {
   button {
     background-color: #aff36f;
   }
+}
+
+.codex-editor__redactor {
+  padding-bottom: 70px !important; /* This will override the inline style */
+}
+
+.savebtn {
+  margin-top: 30px;
 }
