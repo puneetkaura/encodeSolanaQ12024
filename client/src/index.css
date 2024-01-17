@@ -9,8 +9,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  /* background: url("/Users/Saida/code/encodeSolanaQ12024/client/src/assets/blockchain.jpg")
-    center/cover no-repeat; */
+
   position: relative;
 }
 
@@ -25,7 +24,7 @@
       rgba(227, 227, 227, 0.7),
       rgba(228, 228, 228, 0.9)
     ),
-    url("assets/blockchain.gif") center/cover no-repeat;
+    url("./assets/blockchain.gif") center/cover no-repeat;
   z-index: -1;
 }
 
