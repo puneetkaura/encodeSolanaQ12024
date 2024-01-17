@@ -20,7 +20,7 @@
     "axios": "^1.6.5",
     "buffer": "^6.0.3",
     "crypto-js": "^4.2.0",
-    "got": "^14.0.0",
+    "got": "^13.0.0",
     "needle": "^3.3.1",
     "node-fetch": "^3.3.2",
     "oauth-1.0a": "^2.2.6",
@@ -38,6 +38,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.5",
     "vite": "^5.0.8",
-    "vite-plugin-mkcert": "^1.17.2"
+    "vite-plugin-mkcert": "^1.10.1"
   }
 }
