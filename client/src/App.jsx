@@ -67,7 +67,7 @@ function App() {
             alert(JSON.stringify(data));
           }}
         >
-          Secure
+          Secure your message
         </button>
       </div>
     </div>
