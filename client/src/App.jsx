@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import TwitterComponent from "./TwitterComponent";
 import WalletComponent from "./WalletComponent";
 import Editor from "./Editor";
+
 import "./App.css";
 
 const INITIAL_DATA = {
@@ -64,7 +65,6 @@ function App() {
           </button> */}
         </div>
         <br />
-
         <div>
           {/* <p>Twitter Handle: {state.twitterHandle || "Not set"}</p> */}
           {/* <p>Wallet: {state.Wallet || "Not set"}</p> */}
