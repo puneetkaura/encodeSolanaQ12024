@@ -32,6 +32,8 @@ function App() {
     setState((prevState) => ({ ...prevState, ...newState }));
   };
 
+  const trimmedString = ( inputString ) => (inputString && inputString.length > 10) ? inputString.substring(0, 7) + '...' : inputString;
+
   return (
     <div className="App">
       <nav className="navbar">
@@ -41,7 +43,7 @@ function App() {
         </div>
         <div className="navbar-right">
           <FontAwesomeIcon icon={faWallet} />
-          <span>{"Wallet connected" || 'Wallet not connected'}</span>
+          <span>{trimmedString(state.Wallet) || 'Wallet not connected'}</span>
         </div>
       </nav>
       <div className="container">
