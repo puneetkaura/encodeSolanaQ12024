@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const WalletComponent = () => {
+const WalletComponent = ({ updateState }) => {
   /*
    * This function holds the logic for deciding if a Phantom Wallet is
    * connected or not
@@ -18,6 +18,7 @@ const WalletComponent = () => {
       const response = await window.solana.connect({ onlyIfTrusted: true });
       console.log("Connected with Public Key:", response.publicKey.toString());
       setWalletAddress(response.publicKey.toString());
+      updateState({ Wallet: response.publicKey.toString() })
     } else {
       alert("Solana object not found! Get a Phantom Wallet 👻");
     }
@@ -33,6 +34,7 @@ const WalletComponent = () => {
       const response = await solana.connect();
       console.log("Connected with Public Key:", response.publicKey.toString());
       setWalletAddress(response.publicKey.toString());
+      updateState({ Wallet: response.publicKey.toString() })
     }
   };
 

@@ -63,3 +63,21 @@
   cursor: pointer;
   transition: border-color 0.25s;
 } */
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  padding: 10px;
+  color: white;
+}
+
+.navbar-left, .navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.navbar span {
+  margin-left: 5px;
+}

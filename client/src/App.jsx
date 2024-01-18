@@ -1,4 +1,7 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faWallet } from '@fortawesome/free-solid-svg-icons';
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import TwitterComponent from "./TwitterComponent";
 import WalletComponent from "./WalletComponent";
 import Editor from "./Editor";
@@ -31,6 +34,16 @@ function App() {
 
   return (
     <div className="App">
+      <nav className="navbar">
+        <div className="navbar-left">
+          <FontAwesomeIcon icon={faTwitter} />
+          <span>{state.twitterHandle || 'Twitter not connected'}</span>
+        </div>
+        <div className="navbar-right">
+          <FontAwesomeIcon icon={faWallet} />
+          <span>{"Wallet connected" || 'Wallet not connected'}</span>
+        </div>
+      </nav>
       <div className="container">
         <h1 className="header">XCryptic</h1>
         <p className="sub-text">
