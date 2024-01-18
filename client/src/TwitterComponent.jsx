@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 // Retrieve accounts muted by authenticated user
 // https://developer.twitter.com/en/docs/twitter-api/users/mutes/quick-start
 import axios from "axios";
@@ -68,19 +68,23 @@ async function accessToken({ oauth_token, oauth_token_secret }) {
   }
 }
 
-const TwitterSignInButton = () => {
+const TwitterSignInButton = ({ updateState }) => {
+  const [twitterHandle, settwitterHandle] = useState(null);
+
   const handleTwitterSignIn = async () => {
     try {
-      // Get request token
-      const oAuthRequestToken = await requestToken();
-      // Get authorization
-      authorizeURL.searchParams.append(
-        "oauth_token",
-        oAuthRequestToken.oauth_token
-      );
-      console.log("Please go here and authorize:", authorizeURL.href);
-      // Get the access token
-      const oAuthAccessToken = await accessToken(oAuthRequestToken);
+    //   // Get request token
+    //   const oAuthRequestToken = await requestToken();
+    //   // Get authorization
+    //   authorizeURL.searchParams.append(
+    //     "oauth_token",
+    //     oAuthRequestToken.oauth_token
+    //   );
+    //   console.log("Please go here and authorize:", authorizeURL.href);
+    //   // Get the access token
+    //   const oAuthAccessToken = await accessToken(oAuthRequestToken);
+      updateState({ twitterHandle: "@AzanulZ" });
+      settwitterHandle( "@AzanulZ" );
     } catch (e) {
       console.log(e);
     }
@@ -88,12 +92,13 @@ const TwitterSignInButton = () => {
 
   return (
     <div>
+      {!twitterHandle &&
       <button
         onClick={handleTwitterSignIn}
         style={{ padding: "10px 20px", fontSize: "16px" }}
       >
         Sign in with X / Twitter
-      </button>
+      </button>}
     </div>
   );
 };
