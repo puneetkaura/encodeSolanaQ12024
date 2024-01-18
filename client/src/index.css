@@ -45,10 +45,14 @@ body {
   min-height: 100vh;
 }
 
+.navbar {
+  position: relative;
+  top: 0;
+}
+
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
-  margin-top: 0;
   padding-top: 0;
 }
 
